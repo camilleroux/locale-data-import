@@ -59,7 +59,8 @@ namespace :import do
     doc.search("//tr").each do |row|
       if row.search("td[@class='n']") &&
          row.search("td[@class='n']").inner_html =~ types[type] &&
-         (type != "territories" || row.search("td[@class='g']").inner_html =~ /^[A-Z]{2}$/)
+         (type != "territories" || row.search("td[@class='g']").inner_html =~ /^[A-Z]{2}$/) &&
+          (type != "languages" || row.search("td[@class='g']").inner_html =~ /^[a-zA-Z_]+$/)
         code   = row.search("td[@class='g']").inner_text
         #code   = code[-code.size, 2]
         name   = row.search("td[@class='v']").inner_text
@@ -88,7 +89,7 @@ TAIL
 
     # ----- Write the parsed values into file      ---------------------------------
     puts "\n... writing the output"
-    filename = File.join(File.dirname(__FILE__), '..', 'locale', "#{type}.#{locale}.rb")
+    filename = File.join(Rails.root, 'config', 'locales', "#{type}.#{locale}.rb")
     File.open(filename, 'w+') { |f| f << output }
     puts "\n---\nWritten values for the '#{locale}' into file: #{filename}\n"
     # ------------------------------------------------------------------------------
