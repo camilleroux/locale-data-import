@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/camilleroux/locale-data-import"
   gem.license = "MIT"
   gem.summary = %Q{Generate locales from Unicode.org data}
-  gem.description = %Q{Generate locales from Unicode.org data}
+  gem.description = %Q{Rails plugin to easily generate locale files (.yml) from unicode.org locale data like territories or languages.}
   gem.email = "contact@camilleroux.com"
   gem.authors = ["Camille Roux"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
