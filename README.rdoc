@@ -1,6 +1,22 @@
-= locale-data-import
+= LocaleDataImport
 
-Description goes here.
+Rails plugin to easily generate locale files (.yml) from unicode.org locale data like territories or languages.
+
+== Usage
+To generate a locale you just have to run the task 'import:locale' with two parameters:
+* locale
+* type : the type of data you want ('territories' or 'languages')
+
+    rake import:locale locale=fr type=territories
+
+== Install
+Before you can use the rake task, add the necessary gem to your project's Gemfile as follows:
+
+    gem 'locale-data-import'
+
+Then install the gem by running:
+
+    bundle install
 
 == Contributing to locale-data-import
  

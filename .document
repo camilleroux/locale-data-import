@@ -1,5 +1,6 @@
 lib/**/*.rb
 bin/*
+tasks/*
 - 
 features/**/*.feature
 LICENSE.txt
