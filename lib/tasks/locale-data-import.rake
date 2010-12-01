@@ -74,7 +74,7 @@ namespace :import do
     output =<<HEAD
 { :#{locale} => {
 
-    :translation => {
+    :#{type} => {
 HEAD
     translations.each do |translation|
       output << "\t\t\t:#{translation[:code]} => \"#{translation[:name]}\",\n"
